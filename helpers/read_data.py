@@ -1,5 +1,5 @@
 import pandas as pd
-def read_data_from_csv(path = "data.csv", country = "Colombia"):
+def read_data_from_csv(country = "Colombia", path = "data.csv",):
     data = pd.read_csv(path)
     # print(data) # Trae las primeras 5 filas y las últimas 5 filas
     # print(data.head(10)) # Trae las primeras 10 filas
