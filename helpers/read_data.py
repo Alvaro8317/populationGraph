@@ -11,5 +11,6 @@ def read_data_from_csv(country = "Colombia", path = "data.csv",):
     # print(df["2022 Population"].where(df["Country/Territory"] == "Afghanistan"))
 
 
+
 if __name__ == "__main__":
     print(read_data_from_csv())
