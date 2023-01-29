@@ -1,14 +1,20 @@
 from helpers import create_folder, read_data, create_graph
-from datetime import datetime
+from datetime import datetime, date
 import time
 import os
 import calendar
-
+import json
 
 def write_log(details):
     with open("logs\log_error.log", "a", encoding="utf-8") as file:
         file.write(
             f"{datetime.fromtimestamp(calendar.timegm(time.gmtime()))}: {details}\n")
+
+def write_data(details, country):
+    data = json.dumps(details, indent=4)
+    with open(f"data\{date.today()} - {country}.json", "a", encoding="utf-8") as file:
+        file.write(
+            f"{data}\n")
 
 
 if __name__ == "__main__":
@@ -29,7 +35,7 @@ if __name__ == "__main__":
                     country = input("Please introduce the name of a country: ").capitalize()
                     try:
                         result = read_data(country)
-                        print(result)
+                        write_data(result,country)
                         graph = input(
                             "Do you want to graph the data? Please write Yes or No\n").lower()
                         match graph:

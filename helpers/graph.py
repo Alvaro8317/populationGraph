@@ -22,7 +22,6 @@ def create_a_graph(data, form):
     values_data = [value for key, value in data.items()]
     values_data = values_data[1:]
     values_data.reverse()
-    print(labels_data, values_data)
     if form == "bar":
         generate_bar_chart(labels_data, values_data)
     elif form == "pie":

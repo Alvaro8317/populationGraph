@@ -1,7 +1,7 @@
 *.docx
 *.txt
 *.log
-
+data/*.json
 # Created by https://www.toptal.com/developers/gitignore/api/python,node,linux,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,node,linux,windows
 
