@@ -10,4 +10,4 @@ def read_data_from_csv(path):
 
 
 if __name__ == "__main__":
-    read_data_from_csv("final_project\data.csv")
+    read_data_from_csv("data.csv")
