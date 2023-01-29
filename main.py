@@ -35,19 +35,24 @@ if __name__ == "__main__":
                     country = input("Please introduce the name of a country: ").capitalize()
                     try:
                         result = read_data(country)
-                        write_data(result,country)
-                        graph = input(
-                            "Do you want to graph the data? Please write Yes or No\n").lower()
-                        match graph:
-                            case "yes":
-                                form = input(
-                                    "Do you want a pie or a bar graph? Please write bar or pie\n").lower()
-                                if form in ["bar", "pie"]:
-                                    create_graph(result, form)
-                                else:
-                                    print("Invalid option")
-                            case "no":
-                                pass
+                        try:
+                            write_data(result,country)
+                            print(f"Information saved successfully in the folder data")
+                            graph = input(
+                                "Do you want to graph the data? Please write Yes or No\n").lower()
+                            match graph:
+                                case "yes":
+                                    form = input(
+                                        "Do you want a pie or a bar graph? Please write bar or pie\n").lower()
+                                    if form in ["bar", "pie"]:
+                                        create_graph(result, form)
+                                    else:
+                                        print("Invalid option")
+                                case "no":
+                                    pass
+                        except Exception as error:
+                            write_log(error)
+                            print("Unexpected error, check the log")
                     except IndexError as err:
                         write_log(err)
                         print("Invalid country, check the log")
